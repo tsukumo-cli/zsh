@@ -1,35 +1,23 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="custom"
+ZSH_THEME="tsu"
 
 export EDITOR="vim"
 
 alias lla='ls -Alh'
 alias link='ln -s'
 
-
 alias zshconfig="${EDITOR} ~/.zshrc; source ~/.zshrc"
 alias zshtheme="${EDITOR} ~/.oh-my-zsh/themes/$ZSH_THEME.zsh-theme; source ~/.zshrc"
 alias zshrc='zshconfig'
 
-cdp () {
-    if [ $# -gt 1 ];then;echo 'too many arguments';return;fi
-    if [ $# -lt 1 ];then;echo 'too few arguments';return;fi
-
-    mkdir -p $1
-    cd $1
-}
-
-# Comment the following line to hide red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-
 
 # User feature control
 
